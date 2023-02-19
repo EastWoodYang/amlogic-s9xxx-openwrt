@@ -48,6 +48,10 @@ for i in "dns2socks" "microsocks" "ipt2socks" "pdnsd-alt" "redsocks2"; do \
   svn checkout "https://github.com/immortalwrt/packages/trunk/net/$i" "package/helloworld/$i"; \
 done
 
+# Add luci-theme-argon
+rm -rf package/luci-theme-argon
+git clone --depth=1 https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon
+
 # Apply patch
 # git apply ../config-openwrt/patches/{0001*,0002*}.patch --directory=feeds/luci
 #
